@@ -12,6 +12,7 @@ const user = {
     imageSize: 100
 }
 
+// Reactにおいて、JavaScriptの式や変数を JSX 内で使用する際には {} （中括弧）を使用
 export default function MyApp() {
     return (
         <div>
