@@ -1,0 +1,6 @@
+.avatar {
+    width: 100px; /*　画像の幅　*/
+    height: 100px; /*　画像の高さ　*/
+    border-radius: 50%;
+    object-fit: cover; /*　画像がはみ出ないようにする　*/
+}
