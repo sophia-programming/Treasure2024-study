@@ -56,3 +56,37 @@ let obj: {name: string, age?: number};
 obj = {name: 'hacchi'}; // ageプロパティがなくてもエラーにならない
 console.log(obj.name);
 console.log(obj.age);
+
+// オプショナルチェーン (?.)
+function printLength(obj: {a?: string}) {
+    console.log(obj.a?.length); // aがundefinedの場合はundefinedを返す
+}
+printLength({a: 'hello'}); // 5
+printLength({}); // undefined
+
+
+// mapオブジェクト
+const map = new Map();
+map.set("name", "rera");
+map.set("age", 15);
+
+console.log(map.get("name"));
+
+
+// Setオブジェクト
+const set = new Set();
+set.add(1);
+set.add(2);
+set.add(2); // 重複して追加しても無視される
+console.log(set.size);
+
+
+// Enum
+enum Color {
+    Red = "red",
+    Green = "green",
+    Blue = "blue"
+}
+
+const myColor: Color = Color.Red;
+console.log(myColor);
