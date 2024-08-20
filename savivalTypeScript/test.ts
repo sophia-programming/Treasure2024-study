@@ -90,3 +90,10 @@ enum Color {
 
 const myColor: Color = Color.Red;
 console.log(myColor);
+
+
+// アロー関数
+const greet = (name: string) : string => {
+    return `hello ${name}`;
+};
+console.log(greet("hacchi"));
