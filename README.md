@@ -1,3 +1,3 @@
-# Treasure2024
+# Web-study
 
-・Treasureで使用する TypeScriptやReactの個人的な勉強のためのリポジトリ
+・Web系技術の個人的な勉強のためのリポジトリ
