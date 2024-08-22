@@ -1,0 +1,25 @@
+多要素認証（MFA　Multi-Factor Authentication）
+    多要素認証（MFA）は、アプリケーション、オンラインアカウント、VPNなどの
+    リソースへのアクセスを許可する前に、ユーザに「2つ」以上の認証要素の提供を求める認証方法
+
+MFA (多要素認証) においてAuthenticatorアプリは必須なのか？
+→必須ではないが、非常に一般的で便利な選択肢の1つ
+＜MFAの認証方法＞
+MFAでは、以下のような認証方法が利用可能：
+1. Authenticatorアプリ
+2. セキュリティキー (U2F)
+3. SMS認証
+4. 生体認証
+
+＜主なAuthenticatorアプリ＞
+代表的なAuthenticatorアプリには以下があります:
+Google Authenticator
+Microsoft Authenticator
+Salesforce Authenticator
+
+
+-------------------------------------------------------------
+Basic認証
+　　ユーザーIDとpasswordを使った簡易的な認証メカニズム。（HTTP基本認証ともいう）
+    簡易的な認証なのであまりセキュアではない
+    →個人で運営するWebサイト、開発中のサイト、特定のユーザーとだけ共有するサイトなどで使うと良さそう
