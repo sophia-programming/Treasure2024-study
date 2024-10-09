@@ -39,3 +39,60 @@
 
 ③ HTTP
 - 情報を取得したり、更新したりする。
+
+
+URIの仕様（RFC 3986）
+URI (Uniform Resource Identifier) とは「リソースを識別するID」
+Web上の全ての情報を一意に示すことができる
+URI = URL + URN
+URIはURL (Uniform Resource Locator) と URN (Uniform Resource Name) の組み合わせ
+uri.png
+参考文献：https://danielmiessler.com/p/difference-between-uri-url/
+
+URL: リソースの場所（ドメイン名やパス）を指す
+リソースの移動やサーバーの障害でアクセスできなくなる場合がある
+URN: リソースに恒久的なIDを付与する
+ドメイン名に依存せずリソースを識別できる
+URNが普及していない理由
+
+URNは取得が難しい
+（URLのようにサーバーやプロトコルの名前が含まれないため）
+URLが現在では十分に永続的に利用できている
+URIで使用できる文字
+ASCII文字が基本
+非ASCII文字を含む場合、%エンコーディングが必要
+例）「http://ja.wikipedia.org/wiki/あ」 → 「http://ja.wikipedia.org/wiki/%E3%81%82」
+UTF-8で「あ」は「%E3%81%82」の9文字になる（3バイト: 0xE3 0x81 0x82）
+URIの長さ制限
+RFC 3986ではURIの長さに制限はない
+実際にはInternet Explorerで2038バイトの制限があるため、この制限に合わせることが一般的
+絶対URIと相対URI
+絶対URIと相対URIがある
+絶対URI: http://example.jp/foo/bar
+相対URI: /foo/bar
+URIの実装で気をつけるべき点
+絶対URIを使用する
+
+相対URIの解決はクライアント側で複雑になるため、絶対URIを使用する方が望ましい
+%エンコーディングに注意
+
+ASCII文字以外を含む場合は、できる限りUTF-8でエンコーディングする
+URIの良い設計
+URI設計はWebサービスやAPIにおいて最も重要
+URIはリソースの名前
+寿命が長い
+ブラウザに表示される
+良いURIの設計ガイドライン
+シンプルで伝わりやすい名前にする
+
+リソースを表す名詞を使用
+プログラミング言語依存の拡張子（例：.pl, .rb）は避ける
+メソッド名やセッションIDを含めない
+一般ユーザーが理解しやすいシンプルな名前にする
+不透明性を意識する
+
+セキュリティやプライバシー保護のため、内部のメソッド名やIDなどの情報をURIに含めない
+変更しないURIにする
+
+URIはできる限り変更しないように設計
+変更したい場合はリダイレクトを設定して、古いURIから新しいURIへ誘導する
